@@ -12,12 +12,12 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'http://localhost:8080',
+        target: 'https://interviewai-k9hi.onrender.com',
         changeOrigin: true,
         secure: false,
       },
       '/ws': {
-        target: 'ws://localhost:8080',
+        target: 'wss://interviewai-k9hi.onrender.com',
         ws: true,
       }
     }
