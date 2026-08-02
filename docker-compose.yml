@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: ai-interview-backend
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_URL=jdbc:postgresql://ep-billowing-waterfall-ayiy0w89-pooler.c-5.us-east-2.aws.neon.tech/neondb?sslmode=require
+      - DATABASE_USER=neondb_owner
+      - DATABASE_PASSWORD=npg_o2wiTeQOEn5k
+      - GEMINI_API_KEY=YOUR_GEMINI_API_KEY # Replace with actual key
+      - CLOUDINARY_CLOUD_NAME=YOUR_CLOUD_NAME # Replace with actual credentials
+      - CLOUDINARY_API_KEY=YOUR_API_KEY
+      - CLOUDINARY_API_SECRET=YOUR_API_SECRET
+
+  frontend:
+    build: ./frontend
+    container_name: ai-interview-frontend
+    restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
