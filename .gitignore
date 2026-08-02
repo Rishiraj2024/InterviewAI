@@ -4,6 +4,8 @@ backend/.idea/
 backend/*.iml
 backend/*.ipr
 backend/*.iws
+backend/src/main/resources/application-local.properties
+
 
 # Frontend (Node/React/Vite)
 frontend/node_modules/

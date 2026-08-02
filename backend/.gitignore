@@ -21,3 +21,7 @@ target-eclipse/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Sensitive local configurations
+src/main/resources/application-local.properties
+
